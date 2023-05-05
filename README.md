@@ -29,12 +29,7 @@ Add data as described below to the `cross.php` file.
 
 return [
     'plugins' => [
-        \Cross\Git\Plugin\Plugin::class => [
-            //
-        ],
-    ],
-    'commands' => [
-        //
+        \Cross\Git\Plugin\Plugin::class,
     ],
 ];
 ```
@@ -42,8 +37,58 @@ return [
 To learn more about the available configurations, see the [plugin](https://github.com/igor-kozhevnikov/cross-git/blob/1.x/config/config.php) and [commands](https://github.com/igor-kozhevnikov/cross-git/blob/1.x/config/commands.php) config files.
 
 ## Commands
- 
-...
+
+### Adds all files to index
+
+```shell
+./vendor/bin/cross git:add
+```
+
+Config:
+
+- `options` Applied options
+
+### Commit changes with a message
+
+```shell
+./vendor/bin/cross git:commit
+```
+
+Config:
+
+- `options` Applied options
+
+### Push changes to the current branch
+
+```shell
+./vendor/bin/cross git:push
+```
+
+Config:
+
+- `options` Applied options
+
+### Add, commit and push
+
+```shell
+./vendor/bin/cross git:snapshot [options]
+```
+
+```shell
+./vendor/bin/cross snap [options]
+```
+
+Options:
+
+- `-a` `--add` Don't add all files to index
+- `-c` `--commit` Don't commit changes
+- `-p` `--push` Don't push changes
+
+Config:
+
+- `is_use_add` If the value is positive then the `add` command will be used
+- `is_use_commit` If the value is positive then the `commit` command will be used
+- `is_use_push` If the value is positive then the `push` command will be used
 
 ## License
 
