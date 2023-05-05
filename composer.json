@@ -1,7 +1,6 @@
 {
     "name": "igor-kozhevnikov/cross-git",
     "description": "Set of console commands for git",
-    "version": "1.0.0",
     "keywords": ["cross", "console", "command", "git"],
     "homepage": "https://github.com/igor-kozhevnikov/cross-git",
     "license": "MIT",
