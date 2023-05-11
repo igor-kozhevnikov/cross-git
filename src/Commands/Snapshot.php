@@ -5,31 +5,21 @@ declare(strict_types=1);
 namespace Cross\Git\Commands;
 
 use Cross\Attributes\AttributesKeeper;
+use Cross\Commands\Attributes\Aliases;
+use Cross\Commands\Attributes\Description;
+use Cross\Commands\Attributes\Name;
 use Cross\Commands\SequenceCommand;
 use Cross\Attributes\Attributes;
 use Cross\Attributes\AttributesInterface;
-use Cross\Config\Config;
 use Cross\Sequence\Sequence;
 use Cross\Sequence\SequenceInterface;
 use Cross\Sequence\SequenceKeeper;
 
+#[Name('git:snapshot')]
+#[Description('Add, commit and push')]
+#[Aliases('snap')]
 class Snapshot extends SequenceCommand
 {
-    /**
-     * @inheritDoc
-     */
-    protected string $name = 'git:snapshot';
-
-    /**
-     * @inheritDoc
-     */
-    protected array $aliases = ['snap'];
-
-    /**
-     * @inheritDoc
-     */
-    protected string $description = 'Add, commit and push';
-
     /**
      * @inheritDoc
      */
@@ -46,9 +36,9 @@ class Snapshot extends SequenceCommand
      */
     protected function sequence(): SequenceInterface|SequenceKeeper
     {
-        $add = $this->option('add') || ! Config::get("$this->name.is_use_add");
-        $commit = $this->option('commit') || ! Config::get("$this->name.is_use_commit");
-        $push = $this->option('push') || ! Config::get("$this->name.is_use_push");
+        $add = $this->option('add') || ! $this->config('is_use_add');
+        $commit = $this->option('commit') || ! $this->config('is_use_commit');
+        $push = $this->option('push') || ! $this->config('is_use_push');
 
         return Sequence::make()
             ->item(Add::class)->whenNot($add)

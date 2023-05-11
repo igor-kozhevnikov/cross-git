@@ -18,7 +18,7 @@ class Plugin extends BasePlugin
      */
     public function getConfig(): array
     {
-        return require __DIR__ . '/../../config/config.php';
+        return [];
     }
 
     /**

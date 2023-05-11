@@ -4,32 +4,20 @@ declare(strict_types=1);
 
 namespace Cross\Git\Commands;
 
+use Cross\Commands\Attributes\Description;
+use Cross\Commands\Attributes\Name;
 use Cross\Commands\ShellCommand;
-use Cross\Config\Config;
 
+#[Name('git:add')]
+#[Description('Adds all files to index')]
 class Add extends ShellCommand
 {
     /**
      * @inheritDoc
      */
-    protected string $name = 'git:add';
-
-    /**
-     * @inheritDoc
-     */
-    protected string $description = 'Adds all files to index';
-
-    /**
-     * @inheritDoc
-     */
-    protected string|array $command = 'git add .';
-
-    /**
-     * @inheritDoc
-     */
     protected function command(): string|array
     {
-        $options = Config::get("$this->name.options");
+        $options = $this->config('options');
         return "git add $options .";
     }
 }
