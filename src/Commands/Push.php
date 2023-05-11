@@ -16,7 +16,7 @@ class Push extends ShellCommand
     /**
      * @inheritDoc
      */
-    protected function command(): string
+    protected function command(): string|array
     {
         $branch = (new Git())->getCurrentBranch();
         $options = $this->config('options');
