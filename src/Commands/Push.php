@@ -7,7 +7,7 @@ namespace Cross\Git\Commands;
 use Cross\Commands\Attributes\Description;
 use Cross\Commands\Attributes\Name;
 use Cross\Commands\ShellCommand;
-use Cross\Git\Git\Git;
+use Cross\Git\Helpers\Git;
 
 #[Name('git:push')]
 #[Description('Push changes to the current branch')]

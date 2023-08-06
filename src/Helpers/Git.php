@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cross\Git\Git;
+namespace Cross\Git\Helpers;
 
 use Symfony\Component\Process\Process;
 
@@ -15,7 +15,7 @@ class Git
     {
         $process = Process::fromShellCommandline('git branch --show-current');
 
-        if (0 != $process->run()) {
+        if (0 !== $process->run()) {
             return '';
         }
 

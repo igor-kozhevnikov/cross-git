@@ -6,6 +6,15 @@ return [
     ],
     \Cross\Git\Commands\Commit::class => [
         'options' => '-a',
+        'message' => [
+            'handlers' => [
+                // \Cross\Git\Message\Handlers\FirstUppercaseHandler::class,
+                // \Cross\Git\Message\Handlers\ProjectIssueHandler::class => [
+                //     'project' => \Cross\Git\Message\Receivers\ProjectNameReceiver::class,
+                //     'issue' => \Cross\Git\Message\Receivers\IssueNumberReceiver::class,
+                // ],
+            ],
+        ],
     ],
     \Cross\Git\Commands\Push::class => [
         'options' => '-u',
