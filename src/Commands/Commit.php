@@ -22,7 +22,7 @@ class Commit extends ShellCommand
         $massage = $this->message();
         $options = $this->config('options');
 
-       return "git commit $options -m \"$massage\"";
+        return "git commit $options -m \"$massage\"";
     }
 
     protected function message(): string
