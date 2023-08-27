@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cross\Git\Message\Handlers;
+namespace Cross\Git\Text\Handlers;
 
 use InvalidArgumentException;
 
@@ -42,7 +42,7 @@ class Manager
             $handler = new $handler(...$args);
         }
 
-        if (! ($handler instanceof HandlerInterface)) {
+        if (! $handler instanceof HandlerInterface) {
             throw new InvalidArgumentException('Handler does not implement the interface');
         }
 

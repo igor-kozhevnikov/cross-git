@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Cross\Git\Message\Receivers;
+namespace Cross\Git\Text\Extractors\Jira;
 
 use Cross\Git\Helpers\Git;
+use Cross\Git\Text\Extractors\ExtractorInterface;
 
-class ProjectNameReceiver implements ReceiverInterface
+class ProjectFromBranch implements ExtractorInterface
 {
     /**
      * @inheritDoc
      */
-    public function receive(): ?string
+    public function extract(): ?string
     {
         $branch = (new Git())->getCurrentBranch();
 

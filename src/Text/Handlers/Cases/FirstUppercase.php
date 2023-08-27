@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Cross\Git\Message\Handlers;
+namespace Cross\Git\Text\Handlers\Cases;
 
-class FirstUppercaseHandler implements HandlerInterface
+use Cross\Git\Text\Handlers\HandlerInterface;
+
+class FirstUppercase implements HandlerInterface
 {
     /**
      * @inheritDoc

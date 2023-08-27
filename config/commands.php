@@ -8,11 +8,11 @@ return [
         'options' => '-a',
         'message' => [
             'handlers' => [
-                // \Cross\Git\Message\Handlers\FirstUppercaseHandler::class,
-                // \Cross\Git\Message\Handlers\ProjectIssueHandler::class => [
-                //     'project' => \Cross\Git\Message\Receivers\ProjectNameReceiver::class,
-                //     'issue' => \Cross\Git\Message\Receivers\IssueNumberReceiver::class,
-                // ],
+                \Cross\Git\Text\Handlers\Cases\FirstUppercase::class,
+                \Cross\Git\Text\Handlers\Jira\Issue::class => [
+                    'project' => \Cross\Git\Text\Extractors\Jira\ProjectFromBranch::class,
+                    'issue' => \Cross\Git\Text\Extractors\Jira\IssueFromBranch::class,
+                ],
             ],
         ],
     ],

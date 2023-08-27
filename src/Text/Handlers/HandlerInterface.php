@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cross\Git\Message\Handlers;
+namespace Cross\Git\Text\Handlers;
 
 interface HandlerInterface
 {

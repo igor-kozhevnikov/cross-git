@@ -7,7 +7,7 @@ namespace Cross\Git\Commands;
 use Cross\Commands\Attributes\Description;
 use Cross\Commands\Attributes\Name;
 use Cross\Commands\ShellCommand;
-use Cross\Git\Message\Handlers\Manager;
+use Cross\Git\Text\Handlers\Manager;
 use Exception;
 
 #[Name('git:commit')]
@@ -38,11 +38,11 @@ class Commit extends ShellCommand
         $manager->set($handlers);
 
         try {
-            return $manager->handle($message);
+            $message = $manager->handle($message);
         } catch (Exception $exception) {
             $this->error($exception->getMessage());
         }
 
-        return '';
+        return $message;
     }
 }

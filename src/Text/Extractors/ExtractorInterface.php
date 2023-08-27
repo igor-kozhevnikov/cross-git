@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Cross\Git\Message\Receivers;
+namespace Cross\Git\Text\Extractors;
 
-interface ReceiverInterface
+interface ExtractorInterface
 {
     /**
      * Receives something from something end returns it.
      */
-    public function receive(): ?string;
+    public function extract(): ?string;
 }
