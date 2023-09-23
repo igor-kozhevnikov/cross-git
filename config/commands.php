@@ -6,15 +6,15 @@ return [
     ],
     \Cross\Git\Commands\Commit::class => [
         'options' => '-a',
-        'message' => [
-            'handlers' => [
-                \Cross\Git\Text\Handlers\Cases\FirstUppercase::class,
-                \Cross\Git\Text\Handlers\Jira\Issue::class => [
-                    'project' => \Cross\Git\Text\Extractors\Jira\ProjectFromBranch::class,
-                    'issue' => \Cross\Git\Text\Extractors\Jira\IssueFromBranch::class,
-                ],
-            ],
-        ],
+        // 'message' => [
+        //     'handlers' => [
+        //         \Cross\Git\Text\Handlers\Cases\FirstUppercase::class,
+        //         \Cross\Git\Text\Handlers\Jira\Issue::class => [
+        //             'project' => \Cross\Git\Text\Extractors\Jira\ProjectFromBranch::class,
+        //             'issue' => \Cross\Git\Text\Extractors\Jira\IssueFromBranch::class,
+        //         ],
+        //     ],
+        // ],
     ],
     \Cross\Git\Commands\Push::class => [
         'options' => '-u',
