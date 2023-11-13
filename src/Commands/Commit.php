@@ -11,7 +11,7 @@ use Cross\Git\Text\Handlers\Manager;
 use Exception;
 
 #[Name('git:commit')]
-#[Description('Commit changes with a message')]
+#[Description('Commits changes with a message')]
 class Commit extends ShellCommand
 {
     /**
@@ -25,6 +25,9 @@ class Commit extends ShellCommand
         return "git commit $options -m \"$massage\"";
     }
 
+    /**
+     * Process a message.
+     */
     protected function message(): string
     {
         $message = $this->ask('Enter a message');

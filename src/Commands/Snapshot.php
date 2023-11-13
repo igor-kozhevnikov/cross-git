@@ -16,7 +16,7 @@ use Cross\Sequence\SequenceInterface;
 use Cross\Sequence\SequenceKeeper;
 
 #[Name('git:snapshot')]
-#[Description('Add, commit and push')]
+#[Description('Adds, commits and pushes')]
 #[Aliases('snap')]
 class Snapshot extends SequenceCommand
 {

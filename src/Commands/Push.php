@@ -10,7 +10,7 @@ use Cross\Commands\ShellCommand;
 use Cross\Git\Helpers\Git;
 
 #[Name('git:push')]
-#[Description('Push changes to the current branch')]
+#[Description('Pushes changes to the current branch')]
 class Push extends ShellCommand
 {
     /**
