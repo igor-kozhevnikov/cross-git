@@ -30,13 +30,13 @@ class Create extends ShellCommand
      */
     protected function command(): string|array
     {
-        return "git branch {$this->name()}";
+        return "git branch {$this->branch()}";
     }
 
     /**
      * Makes a branch name.
      */
-    protected function name(): string
+    protected function branch(): string
     {
         if ($this->option('project')) {
             $arguments[] = $this->ask('Enter a project');
