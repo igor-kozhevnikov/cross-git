@@ -30,7 +30,7 @@ class Create extends ShellCommand
      */
     protected function command(): string|array
     {
-        return "git branch {$this->branch()}";
+        return "git checkout -b {$this->branch()}";
     }
 
     /**
