@@ -24,6 +24,9 @@ return [
         'is_use_commit' => true,
         'is_use_push' => true,
     ],
+    \Cross\Git\Commands\Feature\Swap::class => [
+        'project' => null,
+    ],
     \Cross\Git\Commands\Feature\Create::class => [
         'project' => null,
     ],
