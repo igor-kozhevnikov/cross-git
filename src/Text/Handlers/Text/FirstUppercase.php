@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cross\Git\Text\Handlers\Cases;
+namespace Cross\Git\Text\Handlers\Text;
 
 use Cross\Git\Text\Handlers\HandlerInterface;
 
