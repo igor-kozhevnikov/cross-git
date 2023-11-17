@@ -17,6 +17,14 @@ class Swap extends BaseCommand
     /**
      * @inheritDoc
      */
+    protected function command(): string|array
+    {
+        return "git switch $this->branch";
+    }
+
+    /**
+     * @inheritDoc
+     */
     protected function branch(): ?string
     {
         $prefix = $this->prefix();
