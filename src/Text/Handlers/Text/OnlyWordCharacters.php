@@ -13,6 +13,6 @@ class OnlyWordCharacters implements HandlerInterface
      */
     public function handle(string $message): string
     {
-        return preg_replace('/[^\w\-_]/', '', $message);
+        return preg_replace('/[^\w\s\-_]/', '', $message);
     }
 }
