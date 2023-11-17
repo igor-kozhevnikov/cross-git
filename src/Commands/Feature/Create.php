@@ -49,9 +49,13 @@ class Create extends BaseCommand
     {
         $title = $this->ask('Enter a task title');
 
+        $handlers = $this->config('title.handlers', [
+            // OnlyWordCharacters::class,
+            // KebabCase::class,
+        ]);
+
         $manager = new Manager();
-        $manager->add(OnlyWordCharacters::class);
-        $manager->add(KebabCase::class);
+        $manager->set($handlers);
 
         return $manager->handle($title);
     }

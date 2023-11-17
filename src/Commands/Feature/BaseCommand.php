@@ -28,7 +28,7 @@ abstract class BaseCommand extends ShellCommand
     protected function attributes(): AttributesInterface|AttributesKeeper
     {
         return Attributes::make()
-            ->option('--project')->shortcut('-p')->none()->description("Define a project");
+            ->option('--project')->shortcut('-p')->none()->description("Define a project name");
     }
 
     /**

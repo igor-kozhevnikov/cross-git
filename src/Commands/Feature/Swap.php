@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Cross\Git\Commands\Feature;
 
-use Cross\Commands\Attributes\Aliases;
 use Cross\Commands\Attributes\Description;
 use Cross\Commands\Attributes\Name;
 use Cross\Git\Helpers\Git;
 
-#[Name('git:feature:swap')]
-#[Description('Switch between feature branches')]
-#[Aliases('git:feature:switch')]
+#[Name('git:feature:switch')]
+#[Description('Switches between feature branches')]
 class Swap extends BaseCommand
 {
     /**

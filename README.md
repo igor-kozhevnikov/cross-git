@@ -57,6 +57,7 @@ Config:
 Config:
 
 - `options` Applied options
+- `message.handlers` Handlers for a message
 
 ### Push changes to the current branch
 
@@ -89,6 +90,31 @@ Config:
 - `is_use_add` If the value is positive then the `add` command will be used
 - `is_use_commit` If the value is positive then the `commit` command will be used
 - `is_use_push` If the value is positive then the `push` command will be used
+
+### Create a feature branch
+
+```shell
+./vendor/bin/cross git:feature:create
+```
+
+Options:
+
+- `-p` `--project` Define a project name
+
+Config:
+
+- `project` Project name
+- `title.handlers` Handlers for a title
+
+### Switch between feature branches
+
+```shell
+./vendor/bin/cross git:feature:switch
+```
+
+Options:
+
+- `-p` `--project` Define a project name
 
 ## License
 

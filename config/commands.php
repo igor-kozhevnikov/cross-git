@@ -8,7 +8,7 @@ return [
         'options' => '-a',
         // 'message' => [
         //     'handlers' => [
-        //         \Cross\Git\Text\Handlers\Cases\FirstUppercase::class,
+        //         \Cross\Git\Text\Handlers\Text\FirstUppercase::class,
         //         \Cross\Git\Text\Handlers\Jira\Issue::class => [
         //             'project' => \Cross\Git\Text\Extractors\Jira\ProjectFromBranch::class,
         //             'issue' => \Cross\Git\Text\Extractors\Jira\IssueFromBranch::class,
@@ -29,5 +29,11 @@ return [
     ],
     \Cross\Git\Commands\Feature\Create::class => [
         'project' => null,
+        // 'title' => [
+        //     'handlers' => [
+        //         \Cross\Git\Text\Handlers\Text\OnlyWordCharacters::class,
+        //         \Cross\Git\Text\Handlers\Text\KebabCase::class,
+        //     ],
+        // ],
     ],
 ];
